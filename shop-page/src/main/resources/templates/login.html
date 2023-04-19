@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Login Page</title>
+
+        <!-- External icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External css -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+        <!-- Internal css -->
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <nav th:replace="fragments/header :: header"/>
+        <div th:replace="fragments/header :: grad"/>
+
+        <div class="titleText">
+            <h1 class="small-mg-bot">Zaloguj się</h1>
+        </div>
+
+        <div class="container">
+            <form class="login-form" th:action="@{/login}" th:method="post">
+                <input type="text" id="email" name="email" th:placeholder="Email"
+                       class="form-control login-input" />
+                <br>
+
+                <input type="password" id="password" name="password" th:placeholder="Hasło"
+                       class="form-control login-input" />
+                <br>
+
+                <div align="center" th:if="${param.error}">
+                    <p class="login-error">Email lub hasło są niepoprawne, spóbuj ponownie.</p>
+                </div>
+                <div align="center" th:if="${successMessage}">
+                    <p style="color: yellow;" th:text="${successMessage}"></p>
+                </div>
+
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value="" th:text="Zaloguj"></button>
+                </div>
+                <br>
+            </form>
+
+            <form th:action="@{/registration}" th:method="get">
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value="" th:text="Zarejestruj"></button>
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+    </body>
+</html>

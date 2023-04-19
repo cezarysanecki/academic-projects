@@ -1,0 +1,92 @@
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <div th:fragment="header-css">
+        <!-- External icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External css -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+        <!-- Internal css -->
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+    </div>
+</head>
+<body>
+    <nav th:fragment="header" class="navbar navbar-expand-lg navbar-light nav-main">
+        <div class="navbar-collapse" id="navbarSupportedContent">
+            <ul id="navbar-first" class="navbar-nav mr-auto" style="margin-left: 50px">
+                <li class="nav-item">
+                    <a class="glyphicon glyphicon-home icon" th:href="@{/}">
+                        <span class="icon-tooltip">Ekran powitalny</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="glyphicon glyphicon-gift icon" th:href="@{/main}">
+                        <span class="icon-tooltip">Kategorie</span>
+                    </a>
+                </li>
+                <th:block sec:authorize="hasAuthority('ADMIN')">
+                    <li class="nav-item">
+                        <a class="glyphicon glyphicon-plus icon" th:href="@{/addCategory}">
+                            <span class="icon-tooltip">Dodaj kategorię</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="glyphicon glyphicon-tags icon" th:href="@{/addProduct}">
+                            <span class="icon-tooltip">Dodaj produkt</span>
+                        </a>
+                    </li>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <a class="glyphicon glyphicon-info-sign icon" th:href="@{/taskInfo}">
+                            <span class="icon-tooltip">Informacje o zadaniu</span>
+                        </a>
+                    </li>
+                </th:block>
+            </ul>
+
+            <th:block sec:authorize="isAuthenticated()">
+                <div id="navbar-login" style="text-align: center;" class="user-info">
+                    <div class="navbar-user">Zalogowany:&nbsp;</div>
+                    <div class="navbar-user" sec:authentication="name"></div>
+                </div>
+            </th:block>
+
+            <ul id="navbar-second" class="navbar-nav ml-auto" style="margin-right: 50px">
+	            <th:block sec:authorize="isAuthenticated()">
+	                <li class="nav-item">
+	                    <a class="glyphicon glyphicon glyphicon-th icon" th:href="@{/order/getOrders}">
+	                        <span class="icon-tooltip">Zamówienia</span>
+	                    </a>
+	                </li>
+                </th:block>
+                <th:block sec:authorize="hasAuthority('USER')">
+	                <li class="nav-item">
+	                    <a class="glyphicon glyphicon-shopping-cart icon" th:href="@{/order/cart}">
+	                        <span class="icon-tooltip">Koszyk</span>
+	                    </a>
+	                </li>
+                </th:block>
+                <th:block sec:authorize="isAnonymous()">
+	                <li class="nav-item">
+	                    <a class="glyphicon glyphicon-user icon" th:href="@{/login}">
+	                        <span class="icon-tooltip">Zaloguj się</span>
+	                    </a>
+	                </li>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <a class="glyphicon glyphicon-log-out icon" th:href="@{/logout}">
+                            <span class="icon-tooltip">Wyloguj się</span>
+                        </a>
+                    </li>
+                </th:block>
+            </ul>
+        </div>
+    </nav>
+
+    <div th:fragment="grad" class="nav-grad"></div>
+</body>
+</html>

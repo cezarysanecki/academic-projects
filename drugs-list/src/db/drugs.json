@@ -1,0 +1,53 @@
+{
+	"drugs": [
+		{
+			"id": 1,
+			"name": "Acard",
+			"price": 15.99,
+			"description": "Lek Acard jest wskazany w profilaktyce choroby niedokrwiennej serca i wtórnego zawału, a także w zapobieganiu powikłaniom pozawałowym. Wskazaniem do stosowania jest także: niestabilna choroba wieńcowa, podejrzenie świeżego zawału serca, angioplastyka wieńcowa, niedokrwienny udar mózgu oraz zarostowa miażdżyca tętnic obwodowych. Preparat może być stosowany we wszelkich sytuacjach, w których konieczne jest hamowanie agregacji płytek krwi.",
+			"imageUrl": "https://static.aptekagemini.pl/media/products/f_/2_/2_/f22bdc3509710b49f297267597e7c346/images/thumbnail/large_1524679386apteka_internetowa_gemini_acard_75mg_120_tabletek.jpg",
+			"producer": "POLPHARMA",
+			"sub1name": "kwas acetylosalicylowy",
+			"sub1amount": "75mg",
+			"sub2name": "",
+			"sub2amount": "",
+			"sub3name": "",
+			"sub3amount": "",
+			"formulation": "120 tabletek",
+			"drugEffect": "Kwas acetylosalicylowy skutecznie hamuje agregację płytek krwi – dzięki temu, iż tabletki posiadają otoczki nie rozpadają się w żołądku i zmniejszają drażniące działanie kwasu na jego błonę śluzową."
+		},
+		{
+			"id": 2,
+			"name": "Rutinoscorbin",
+			"price": 9.97,
+			"description": "Jest wskazany na stany niedoboru i zwiększonego zapotrzebowania na witaminę C (przeziębienia, zakażenia wirusowe w tym grypa), pomocniczo w nadmiernej przepuszczalności naczyń.",
+			"imageUrl": "https://static.aptekagemini.pl/media/products/9_/b_/5_/9b599f7d6b6bcb34d7133b885e85a1b6/images/thumbnail/large_36432.jpg",
+			"producer": "GLAXOSMITHKLINE",
+			"sub1name": "rutozyd",
+			"sub1amount": "25mg",
+			"sub2name": "kwas askorbowy",
+			"sub2amount": "100mg",
+			"sub3name": "",
+			"sub3amount": "",
+			"formulation": "150 tabletek",
+			"drugEffect": "Rutozyd wzmacnia naczynia krwionośne i zmniejsza ich przepuszczalność. Chroni także witaminę C przed utlenieniem, dzięki czemu zachowuje ona dłużej swoje właściwości. Witamina C działa przeciwutleniająco. Jest niezbędna w wielu procesach metabolicznych, uczestniczy m.in. w tworzeniu kolagenu i hemoglobiny oraz ułatwia przyswajanie żelaza."
+		},
+		{
+			"id": 3,
+			"name": "Ibuprom MAX",
+			"price": 17.89,
+			"description": "Pomaga na dolegliwości bólowe różnego pochodzenia o nasileniu słabym do umiarkowanego, w tym: bóle głowy, migrena, bóle zębów, bóle mięśniowe, bóle okolicy lędźwiowo-krzyżowej, bóle kostne i stawowe, nerwobóle; bolesne miesiączkowanie; gorączka (m.in. w przebiegu grypy, przeziębienia lub innych chorób zakaźnych).",
+			"imageUrl": "https://static.aptekagemini.pl/media/products/1_/c_/7_/1c7b4e1e91906642d1b039691c2d9854/images/thumbnail/large_1526063118apteka_internetowa_gemini_ibuprom_max_400mg_48_tabletek.jpg",
+			"producer": "USP",
+			"sub1name": "ibuprofen",
+			"sub1amount": "400mg",
+			"sub2name": "",
+			"sub2amount": "",
+			"sub3name": "",
+			"sub3amount": "",
+			"formulation": "48 tabletek",
+			"drugEffect": "Ma działanie przeciwbólowe, przeciwgorączkowe, przeciwzapalne."
+		}
+	]
+	
+}

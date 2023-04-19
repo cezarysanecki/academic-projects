@@ -1,0 +1,66 @@
+i.icon {
+    font-size: 1.6em;
+}
+
+.container.main {
+    margin-top: 7em;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.blogContent {
+    text-align: justify;
+    text-indent: 3em;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.errorDiv {
+    margin-bottom: 15px;
+}
+
+.sm-t {
+    margin-top: 10px;
+}
+
+#errorMessage {
+    color: red;
+    font-size: 1.2em;
+}
+
+.ui.items>.item>.content>.header {
+    display: block;
+    text-align: center;
+}
+
+.ui.items>.item>.content {
+    padding: 15px;
+}
+
+.item .description p {
+    text-align: justify;
+    text-indent: 3em;
+}
+
+.item .description img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.button-right button {
+    float: right;
+}
+
+.ui.form textarea {
+    resize: none;
+}
+
+#userTable tr th:nth-child(3){
+   width: 25%;
+}

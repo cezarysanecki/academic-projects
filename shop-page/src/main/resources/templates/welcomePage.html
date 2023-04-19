@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome Page</title>
+
+		<!-- External css -->
+		<link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+		<link rel="stylesheet" th:href="@{/css/hamburgers.min.css}" />
+		
+		<!-- Internal css -->
+		<link rel="stylesheet" th:href="@{/css/general.css}" />
+		<link rel="stylesheet" th:href="@{/css/welcome.css}" />
+	</head>
+	<body>
+		<div class="contextText">
+			<h1>Witaj w sklepie internetowym</h1>
+			<h2 class = "small-mg-bot">Jedynym takim miejscu w sieci!</h2>
+			<a class="in-button" th:href="@{/main}">Wejdź</a>
+		</div>
+
+		<div class="area" >
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	</body>
+</html>

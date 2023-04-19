@@ -1,0 +1,43 @@
+.table .thead-light .sortableColumn:hover {
+    cursor: pointer;
+}
+
+.drugInfo:hover {
+    cursor: help;
+    color: #669999;
+    transition-duration: 0.5s;
+}
+
+table td, table th {
+  border: 1px solid silver;
+}
+
+.headerSortDown:after, .headerSortUp:after {
+  content: ' ';
+  position: relative;
+  left: 10px;
+  border: 8px solid transparent;
+}
+
+.headerSortDown:after {
+  top: 15px;
+  border-top-color: silver;
+}
+
+.headerSortUp:after {
+  bottom: 15px;
+  border-bottom-color: silver;
+}
+
+.headerSortDown, .headerSortUp {
+  padding-right: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+}
+
+.hideErrorDiv {
+    display: none;
+}

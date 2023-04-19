@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:fragment="header-css">
+        <!-- External icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External css -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+        <!-- Internal css -->
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+    </div>
+</head>
+<body>
+    <div th:fragment="footer" id="footer">
+        Politechnika Warszawska Wydział EITI, wykonał: Cezary Sanecki
+    </div>
+</body>
+</html>

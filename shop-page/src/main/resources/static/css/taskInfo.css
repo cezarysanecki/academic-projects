@@ -1,0 +1,36 @@
+.info-global {
+	color: white;
+}
+
+.info-title {
+	text-decoration: underline;
+}
+
+.info-main-text {
+	font-size: 12px;
+}
+
+.info-req {
+	background-color: #9363c4;
+}
+
+.info-href {
+	color: white;
+	text-decoration: underline;
+	transition: color 0.3s ease-out;
+}
+
+.info-href:hover,
+.info-href:active {
+	text-decoration: none;
+	color: #9363c4;
+}
+
+.info-div-img {
+	text-align: center;
+	display: block;
+}
+
+.info-img {
+	border: 1px black solid;
+}

@@ -1,0 +1,71 @@
+.table-order {
+	color: #fff;
+	font-size: 15px;
+    text-align: center;
+}
+
+.button-center {
+    text-align: center;
+}
+
+.order-button {
+	display: inline;
+    text-align: center;
+}
+
+.order-confirm {
+    padding: 8px 16px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: color 0.3s ease-out,
+                background-color 0.3s ease-out,
+                border-color 0.3s ease-out;
+}
+
+.order-confirm:hover,
+.order-confirm:active {
+    background-color: #9363c4;
+    border-color: #9363c4;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in,
+                background-color 0.3s ease-in,
+                border-color 0.3s ease-in;
+}
+
+.order-summary {
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+}
+
+.order-desc {
+	font-size: 20px;
+}
+
+.order-sum {
+	font-size: 30px;
+}
+
+#order-empty {
+	margin-top: 20px;
+    color: red;
+    text-align: center;
+}
+
+.order-info {
+	color: #fff;
+	text-align: center;
+}
+
+.order-info-sm-bot-mar {
+	margin: 20px 0;
+}
+
+
+
+

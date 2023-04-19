@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    font-family: 'Exo', sans-serif;
+}
+
+.nav-main {
+    background-color: #9363c4;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+}
+
+.nav-grad {
+    background-image: linear-gradient(#9363c4, #4e54c8);
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.icon {
+	width: 80px;
+	font-size: 30px;
+	text-align: center;
+	color: #ededed;
+	text-shadow: 0 0 1px black;
+}
+
+.icon:hover,
+.icon:active {
+    text-decoration: none;
+    transition-duration: 1s;
+    color: #dbdbdb;
+}
+
+.icon .icon-tooltip {
+    font-family: 'Exo', sans-serif;
+    font-size: 0.6em;
+    color: #fff;
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.icon .icon-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.icon:hover .icon-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#active {
+    color: white;
+}
+
+.titleText {
+    width: 100%;
+    top: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.titleText h1 {
+    font-size: 50px;
+}
+
+.small-mg-bot {
+    margin-bottom: 30px;
+}
+
+.user-info {
+	font-size: 14px;
+	color: #fff;
+	display: flex;
+	align-items: center
+}
+
+#navbar-login {
+    margin-top: 1.15em;
+}
+
+#footer {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+
+
+
+

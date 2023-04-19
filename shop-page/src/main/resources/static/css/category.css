@@ -1,0 +1,102 @@
+.cat-button {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.cat-edit {
+    width: 200px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: color 0.3s ease-out,
+    background-color 0.3s ease-out,
+    border-color 0.3s ease-out;
+}
+
+.cat-edit:hover,
+.cat-edit:active {
+    background-color: #9363c4;
+    border-color: #9363c4;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in,
+    background-color 0.3s ease-in,
+    border-color 0.3s ease-in;
+}
+
+.prod-data {
+    width: 200px;
+    height: 260px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+.prod-data:hover,
+.prod-data:active {
+    transition-duration: 0.6s;
+    box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.75);
+}
+
+.prod-desc {
+    height: 60px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.prod-desc h2 {
+    font-size: 20px;
+}
+
+.prod-desc h3 {
+    font-size: 12px;
+}
+
+.prod-img {
+	width: 200px;
+}
+
+.prod-prize {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.prod-href {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+}
+
+.prod-href:hover,
+.prod-href:active {
+    transition-duration: 0.6s;
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0 0 0;
+    background-color: #9363c4;
+}
+
+#prod-nf {
+    color: red;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+

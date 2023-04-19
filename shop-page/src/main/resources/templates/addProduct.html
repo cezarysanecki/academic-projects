@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Product Page</title>
+
+        <!-- External icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External css -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+        <!-- Internal css -->
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <nav th:replace="fragments/header :: header"/>
+        <div th:replace="fragments/header :: grad"/>
+
+        <div class="titleText">
+            <h1 class="small-mg-bot">Dodaj produkt</h1>
+        </div>
+
+        <div class="container">
+            <form class="login-form" th:action="@{/addProduct}" th:method="post" th:object="${product}">
+            	<input type="hidden" id="id" name="id" th:field="*{productId}" />
+            	
+                <input type="text" id="producer" name="producer" th:placeholder="Producent" th:field="*{producer}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('producer')}" th:errors="*{producer}"
+                       class="login-error"></label>
+                <br>
+
+                <input type="text" id="model" name="model" th:placeholder="Model" th:field="*{model}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('model')}" th:errors="*{model}"
+                       class="login-error"></label>
+                <br>
+
+                <select th:field="*{productType}" class="form-control login-input">
+                    <option th:each="category : ${categories}" th:value="${category.getProductTypeId()}"
+                            th:text="${category.getName().substring(0,1).toUpperCase()} +
+                            ${category.getName().substring(1).toLowerCase()}"
+                            th:selected="${category.getProductTypeId()} == 1"></option>
+                </select>
+                <br>
+
+                <textarea rows="4" cols="50" maxlength="1000" id="description" name="description"
+                          th:field="*{description}" th:placeholder="'Opis produktu'"
+                          class="form-control login-input"></textarea>
+                <label th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+                       class="login-error"></label>
+                <br>
+
+                <input type="number" id="prize" name="prize" min="0" value="0" step=".01" th:field="*{prize}" th:default="0.01"
+                       th:placeholder="Cena" class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('prize')}" th:errors="*{prize}"
+                       class="login-error"></label>
+                <br>
+
+                <input type="number" id="availableAmount" name="availableAmount" min="0" value="0" step="1" th:default="0"
+                       th:field="*{productCount.availableAmount}" th:placeholder="'Ilość dotępnych sztuk'"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('productCount.availableAmount')}"
+                       th:errors="*{productCount.availableAmount}" class="login-error"></label>
+                <br>
+
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value="" th:text="Zatwierdź"></button>
+                </div>
+                <br>
+            </form>
+
+            <form th:action="@{/main}" th:method="get">
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value=""
+                            th:text="'Wróć do menu głównego'"></button>
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Category Page</title>
+
+        <!-- External icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External css -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+        <!-- Internal css -->
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <nav th:replace="fragments/header :: header"/>
+        <div th:replace="fragments/header :: grad"/>
+
+        <div class="titleText">
+            <h1 class="small-mg-bot">Dodaj kategorię</h1>
+        </div>
+
+        <div class="container">
+            <form class="login-form" th:action="@{/addCategory}" th:method="post" th:object="${category}">
+            	<input type="hidden" id="id" name="id" th:field="*{productTypeId}" />
+                <input type="text" id="name" name="name" th:placeholder="Nazwa" th:field="*{name}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="login-error"></label>
+                <br>
+
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value="" th:text="Dodaj"></button>
+                </div>
+                <br>
+            </form>
+
+            <form th:action="@{/main}" th:method="get">
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value=""
+                            th:text="'Wróć do menu głównego'"></button>
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+    </body>
+</html>

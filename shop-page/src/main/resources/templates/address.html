@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Address Page</title>
+
+        <!-- External icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External css -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+        <!-- Internal css -->
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <nav th:replace="fragments/header :: header"/>
+        <div th:replace="fragments/header :: grad"/>
+
+        <div class="titleText">
+            <h1 class="small-mg-bot">Dodaj adres do zamówienia</h1>
+        </div>
+
+        <div class="container">
+            <form class="login-form" th:action="@{/order/postToOrders}" th:method="post" th:object="${address}">
+                <input type="text" id="street" name="street" th:placeholder="Ulica" th:field="*{street}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('street')}" th:errors="*{street}"
+                       class="login-error"></label>
+                <br>
+
+                <input type="text" id="numberOfHouse" name="numberOfHouse" th:placeholder="'Numer domu'" th:field="*{numberOfHouse}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('numberOfHouse')}" th:errors="*{numberOfHouse}"
+                       class="login-error"></label>
+                <br>
+
+                <input type="text" id="numberOfFlat" name="numberOfFlat" th:placeholder="'Numer mieszkania'" th:field="*{numberOfFlat}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('numberOfFlat')}" th:errors="*{numberOfFlat}"
+                       class="login-error"></label>
+                <br>
+
+                <input type="text" id="city" name="city" th:placeholder="Miasto" th:field="*{city}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('city')}" th:errors="*{city}"
+                       class="login-error"></label>
+                <br>
+                
+                <input type="text" id="postCode" name="postCode" th:placeholder="'Kod pocztowy'" th:field="*{postCode}"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}"
+                       class="login-error"></label>
+                <br>
+
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit" value="" th:text="Zatwierdź"></button>
+                </div>
+                <br>
+            </form>
+        </div>
+
+        <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+    </body>
+</html>

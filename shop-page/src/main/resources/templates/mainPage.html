@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Main Page</title>
+	
+		<!-- External icons -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+		<!-- External css -->
+		<link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+		
+		<!-- Internal css -->
+		<link rel="stylesheet" th:href="@{/css/general.css}" />
+		<link rel="stylesheet" th:href="@{/css/mainPage.css}" />
+	</head>
+	<body>
+		<nav th:replace="fragments/header :: header"/>
+		<div th:replace="fragments/header :: grad"/>
+
+		<div align="center" th:if="${successMessage}">
+			<p style="color: yellow;" th:text="${successMessage}"></p>
+		</div>
+		<br>
+
+		<div class="titleText">
+			<h1 class="small-mg-bot">Kategorie</h1>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<th:block th:each="category : ${categories}">
+					<div class="col">
+						<div class="cat-data">
+							<img class="cat-img" th:src="@{'/img/categories/' +
+									${category.getName().toLowerCase()} + '.jpg'}"  
+									th:alt="${category.getName().toLowerCase()}" onerror="imgError(this)">
+
+							<a class="in-category" th:href="@{/products(categoryId=${category.getProductTypeId()})}"
+							  		th:text="${category.getName().toLowerCase().substring(0, 1).toUpperCase()} +
+							 		${category.getName().toLowerCase().substring(1).toLowerCase()}"></a>
+						</div>
+					</div>
+				</th:block>
+			</div>
+
+			<nav th:replace="fragments/footer :: footer"/>
+		</div>
+
+		<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/mainPage.js}"></script>
+		<script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+	</body>
+</html>

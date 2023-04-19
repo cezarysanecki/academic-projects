@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Task Info</title>
+	
+		<!-- External icons -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+		<!-- External css -->
+		<link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+		
+		<!-- Internal css -->
+		<link rel="stylesheet" th:href="@{/css/general.css}" />
+		<link rel="stylesheet" th:href="@{/css/taskInfo.css}" />
+	</head>
+	<body>
+		<nav th:replace="fragments/header :: header"/>
+		<div th:replace="fragments/header :: grad"/>
+
+		<div class="titleText">
+			<h1>Cezary Sanecki</h1>
+			<h3 class="small-mg-bot" style="text-decoration: underline;">nr indeksu: 251957</h3>
+		</div>
+
+		<div class="container info-global">
+			<div class="row">
+				<div>
+					<h1 class="info-title">Opis serwisu</h1>
+					
+					<p class="info-main-text">
+						Prezentowany serwis to sklep internetowy pozwalający na monitorowanie 
+						wszystkich zakupów przez administratora. Użytkownicy posiadający konta mogą zamawiać 
+						produkty i monitorować swoje zamówienia natomiast pozostali użytkownicy mogą swobodnie 
+						przeglądać ofertę sklepu internetowego.
+					</p>
+					<p class="info-main-text">
+						<strong>Administrator:</strong>
+						Login: admin@admin.pl
+						Hasło: 12345 
+					</p>
+					<p class="info-main-text">
+						<strong>Uzytkownik 1:</strong>
+						Login: user@user.pl
+						Hasło: 12345 
+					</p>
+					<p class="info-main-text">
+						<strong>Uzytkownik 2:</strong>
+						Login: user2@user.pl
+						Hasło: 12345 
+					</p>
+				</div>
+				
+				<div>
+					<h1 class="info-title">Technologie</h1>
+					
+					<p class="info-main-text">
+						Strona internetowa została wykonana z wykorzystaniem następujących technologii:
+					</p>
+					<ul class="info-main-text">
+						<li>JAVA 8</li>
+						<li>Spring MVC 5.1.6</li>
+						<li>Baza danych PostgreSQL 9</li>
+						<li>sterownik JDBC postgresql 9.4</li>
+						<li>HTML 5</li>
+						<li>CSS 3</li>
+						<li>Bootstrap 4.3</li>
+						<li>JavaScript</li>
+						<li>JQuery 3.3.1</li>					
+					</ul>
+				</div>
+				
+				<div>
+					<h1 class="info-title">Wymagania stawiane aplikacji</h1>
+					
+					<p class="info-main-text info-req">
+						Serwis może być zrealizowany na bazie HTML 4.01 lub XHTML (dopuszczalne jest też użycie XML+XSLT). 
+						Strony muszą być utworzone poprawnie i mieć poprawne deklaracje typu
+					</p>
+					<p class="info-main-text">
+						Serwis został wykonany na bazie HTML 5 (deklaracja &lt!DOCTYPE HTML&gt) oraz został sprawdzony 
+						<a class="info-href" href="https://validator.w3.org/">validatorem html</a>. 
+					</p>
+					
+					<p class="info-main-text info-req">
+						Wymagane jest nietrywialne formatowanie przy użyciu CSS. reguł CSS również będzie sprawdzana walidatorem.
+					</p>
+					<p class="info-main-text">
+						Nietrywialne formatowanie osiągnięto dzięki zastosowaniu frameworku 
+						<a class="info-href" href="https://getbootstrap.com/docs/4.3/">Bootstrap 4.3</a>. Poprawność reguł CSS 
+						została sprawdzona <a class="info-href" href="https://jigsaw.w3.org/css-validator/">validatorem CSS</a>. 
+					</p>
+					
+					<p class="info-main-text info-req">
+						Kompatybilność i „łagodna degradacja” - serwis powinien funkcjonować poprawnie i wyglądać 
+						dobrze we wszystkich popularnych przeglądarkach (najnowsze wersje), a korzystanie z serwisu 
+						powinno być też możliwe – choć zapewne nie bez zakłóceń w rodzaju nieudanego formatowania.
+					</p>
+					<p class="info-main-text">
+						Serwis został przetestowany na popularnych przeglądarkach internetowych takich jak:
+					</p>
+					<ul class="info-main-text">
+						<li>Google Chrome</li>
+						<li>Mozilla Firefox</li>
+						<li>Internet Explorer (MS Edge)</li>
+					</ul>
+					
+					<p class="info-main-text info-req">
+						Dostępność dla niepełnosprawnych – w szczególności powinna być możliwa nawigacja przy użyciu 
+						oprogramowania czytającego.
+					</p>
+					<p class="info-main-text">
+						Wszystkie obrazki posiadają teksty alternatywne a strony tytuły. 
+					</p>
+					
+					<p class="info-main-text info-req">
+						Poza (X)HTML i CSS serwis powinien wykorzystywać co najmniej jedną wybraną technologię spośród 
+						przedstawionych na wykładzie (np. skrypty po stronie serwera i/lub klienta, ciasteczka, bazy danych, 
+						web serwisy, SSL...)
+					</p>
+					<p class="info-main-text">
+						Strona posiada animowany <a class="info-href" th:href="@{/}">widok powitalny</a> wykonany z zastosowaniem skryptów JS po stronie użytkownika. 
+						Wszystkie informacje o zakupach i ofertach sklepu przechowywane są w relacyjnej bazie danych PostgreSQL.
+					</p>
+					
+					<p class="info-main-text info-req">
+						Serwis powinien zawierać dobrze przemyślany, wygodny i spójny system nawigacji. Co więcej, 
+						serwis powinien być na tyle duży, aby ten system miał sens
+					</p>
+
+					<p class="info-main-text" style="margin-top: 10px;">
+						Aplikacja posiada wygodny system nawigacji widoczny na początku każdej strony.
+					</p>
+					<div class="row info-div-img">
+						<img class="info-img" th:src="@{'/img/task-info/menu.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 80%; height: 80%"/>
+					</div>
+
+					<p class="info-main-text" style="margin-top: 10px;">
+						Serwis posiada układ w formie kafelków. Wszystkie produkty są pogrupowane w kategorie, 
+						które administrator może tworzyć lub modyfikować wedle uznania.
+					</p>
+					<div class="row info-div-img">
+						<img class="info-img" th:src="@{'/img/task-info/kategorie.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 60%; height: 60%"/>
+					</div>
+
+					<p class="info-main-text" style="margin-top: 10px;">
+						Administrator ma możliwość dodawania produktów oraz kategorii do swojego sklepu.
+					</p>
+					<div class="row info-div-img">
+						<img class="info-img" th:src="@{'/img/task-info/admin.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 50%; height: 50%"/>
+					</div>
+
+					<p class="info-main-text" style="margin-top: 10px;">
+						Użytkownicy mają możliwość dokonywania zakupów w sklepie oraz posiadają wgląd do historii swoich transakcji. 
+					</p>
+					<div class="row info-div-img">
+						<img class="info-img" th:src="@{'/img/task-info/zamówienie.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 50%; height: 50%"/>
+						<img class="info-img" th:src="@{'/img/task-info/zamówienie2.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 50%; height: 50%"/>
+						<img class="info-img" th:src="@{'/img/task-info/zamówienie3.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 50%; height: 50%"/>
+					</div>
+
+					<p class="info-main-text" style="margin-top: 10px;">
+						Administrator posiada podgląd historii wszystkich zakupów wykonanych w sklepie internetowym przez użytkowników. 
+					</p>
+					<div class="row info-div-img">
+						<img class="info-img" th:src="@{'/img/task-info/admin_order.jpg'}"
+							 alt="Panel nawigacyjny" style="width: 50%; height: 50%"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/mainPage.js}"></script>
+		<script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+

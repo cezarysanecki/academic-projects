@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	<head>
+		<meta charset="utf-8">
+		<title th:text="'Product ' + ${product.getProductId()}"></title>
+	
+		<!-- External icons -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+		<!-- External css -->
+		<link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+		
+		<!-- Internal css -->
+		<link rel="stylesheet" th:href="@{/css/general.css}" />
+		<link rel="stylesheet" th:href="@{/css/product.css}" />
+	</head>
+	<body>
+		<nav th:replace="fragments/header :: header"/>
+		<div th:replace="fragments/header :: grad"/>
+
+		<div class="titleText">
+			<h1 th:text="${product.getProducer()} + ' '+ ${product.getModel()}"></h1>
+			<h2 class="small-mg-bot">
+				<a class="cat-href" th:href="@{/products(categoryId=${product.getProductType().getProductTypeId()})}"
+				   th:text="'Powrót do kategorii: ' + ${product.getProductType().getName()}"></a>
+			</h2>
+		</div>
+		
+        <div align="center" th:if="${errorAmount}">
+			<p class="prod-err" th:text="${errorAmount}"></p>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-lg-6 prod-box">
+					<img class="unit-img" th:src="@{'/img/products/' + ${product.getProductId()} + '.jpg'}" 
+							th:alt="${product.getProducer()} + ' ' + ${product.getModel()}" onerror="imgError(this)">
+				</div>
+				<div class="col-sm-12 col-lg-6 prod-desc-box">
+					<div class="unit-desc">
+						<div class="unit-prize" th:text="${#numbers
+							.formatDecimal(product.getPrize(), 2, 2)} + ' zł'"></div>
+						<div class="unit-info">
+							<div th:text="${product.getDescription()}"></div>
+							<br>
+
+							<div th:inline="text">
+								Dostępna ilość produktów: 
+								<span id="unit-available" th:text="${product.productCount.availableAmount}"></span>
+							</div>
+
+							<div th:text="${product.productCount.peopleBought} + ' osób kupiło ' +
+								${product.productCount.itemBought} + ' przedmiotów.'"></div>
+							<br>
+
+							<div class="buttons-down">
+								<div class="unit-ord-but">
+									<th:block sec:authorize="hasAuthority('USER')">
+										<form th:action="${'/order/addToCart/' + product.productId}" 
+												th:method="post" class="unit-button">
+											<div class="prod-amount">
+												<span class="amount-label">Liczba sztuk: </span>
+												<button class="button-inc" type="button" value="minus">-</button>
+													<span id="amount-num">1</span>
+												<button class="button-inc" type="button" value="plus"
+														style="margin-right: 20px">+</button>
+											</div>
+											
+											<input type="hidden" name="amount" id="amount">
+											
+											<button class="unit-buy" type="submit" name="submit" value=""
+													th:text="'Dodaj do koszyka'" ></button>
+										</form>
+									</th:block>
+									
+									<th:block sec:authorize="hasAuthority('ADMIN')">
+										<div class="unit-button">
+											<a class="unit-buy" th:href="@{/editProduct(productId=${product
+											.getProductId()})}">Edytuj</a>
+										</div>
+										<form th:action="@{/deleteProduct(productId=${product.getProductId()})}"
+											  th:method="delete" class="unit-button">
+											<button class="unit-buy" type="submit" name="submit" value=""
+													th:text="Usuń" onClick="return confirm('Jesteś pewny?')"></button>
+										</form>
+									</th:block>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/product.js}"></script>
+		<script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+	</body>
+</html>

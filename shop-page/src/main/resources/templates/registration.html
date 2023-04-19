@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" %>
+<head>
+    <meta charset="utf-8">
+    <title>Registration Page</title>
+
+    <!-- External icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- External css -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+
+    <!-- Internal css -->
+    <link rel="stylesheet" th:href="@{/css/general.css}" />
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+</head>
+<body>
+    <nav th:replace="fragments/header :: header"/>
+    <div th:replace="fragments/header :: grad"/>
+
+    <div class="titleText">
+        <h1 class="small-mg-bot">Zarejestruj się</h1>
+    </div>
+
+    <div class="container">
+        <form th:action="@{/login}" th:method="get">
+            <div class="button-center">
+                <button class="login-button" type="submit" name="submit"
+                        value="">Wróć do panelu logowania</button>
+            </div>
+        </form>
+
+        <br>
+
+        <div class="row">
+            <form autocomplete="off" th:action="@{/registration}" th:object="${user}" method="post" class="login-form">
+                <input type="text" th:field="*{firstName}" placeholder="Imię"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+                       class="login-error"></label>
+
+                <br>
+
+                <input type="text" th:field="*{lastName}" placeholder="Nazwisko"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                       class="login-error"></label>
+
+                <br>
+
+                <input type="text" th:field="*{email}" placeholder="Email"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                       class="login-error"></label>
+
+                <br>
+
+                <input type="password" th:field="*{password}" placeholder="Hasło"
+                       class="form-control login-input" />
+                <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                       class="login-error"></label>
+
+                <br>
+
+                <div class="button-center">
+                    <button class="login-button" type="submit" name="submit"
+                            value="">Zarejestruj się</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/navbar.js}"></script>
+</body>
+</html>
